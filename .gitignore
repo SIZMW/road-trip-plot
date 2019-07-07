@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 img/pdn/
 data/raw_location_history.json
+maps/*
