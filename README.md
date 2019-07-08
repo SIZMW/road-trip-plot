@@ -14,7 +14,32 @@ This project requires [Python 2.7](https://www.python.org/download/releases/2.7/
 This project also requires the Google Takeout JSON file of location history. This can be done creating an archive of your Google data and only selecting your location history as the archive contents. This [link](https://takeout.google.com/settings/takeout/custom/location_history?hl=en&gl=US&expflags) should directly allow you to do this. Place the JSON file at `data/location_history.json` in the project folder.
 
 ## Usage
-The notebook [road-trip-plot.ipynb](road-trip-plot.ipynb) can be executed top to bottom to produce the file `map.html`. This map can be viewed in a web browser to explore the road trip route.
+
+### Data Sanitization
+
+To sanitize the JSON location data, simply run the sanitization script:
+
+```
+python .\sanitize_data.py -i <raw file from Google Takeout> -o .\data\<sanitized JSON file> -s <Start Epoch Unix timestamp of data> -e <End Epoch Unix timestamp of data>
+```
+
+This will produce a sanitized JSON file for just the minimum data required to plot the map.
+
+For example:
+
+```
+python .\sanitize_data.py -i .\data\boston_sandiego_location_history_raw.json -o .\data\boston_sandiego_location_history.json -s 1495425600000 -e 1496030340000
+```
+
+produces the provided file [boston_sandiego_location_history.json](data/boston_sandiego_location_history.json).
+
+### Map Plot
+
+To plot the map, simply run the road trip plot script:
+
+```
+python .\road_trip_plot.py -i .\data\<sanitized JSON file> -o .\maps\<map HTML file> -s <Start Epoch Unix timestamp of data> -e <End Epoch Unix timestamp of data>
+```
 
 ### Output
 
