@@ -6,6 +6,10 @@ In the past, I have done a few road trips through various parts of the country. 
 
 Google Maps has a [timeline](https://www.google.com/maps/timeline) feature which allows you to see your location history by year, month, and day. You can use [Google Takeout](https://takeout.google.com/settings/takeout) to download this data in a JSON format. It doesn't seem like you can plot a route across days or weeks in the Timeline view, so I wanted to do it myself.
 
+### Notes
+
+One of the main issues that comes up with this method of data collection is that depending on the location of the trip and the cell/GPS signal strength throughout the trip, it's possible that the data can be incomplete, noisey, or coarse in granularity. Otherwise, in general, the resulting map and route plots tend to be very clear and descriptive of the original data.
+
 ## Build
 This project requires [Python 2.7](https://www.python.org/download/releases/2.7/), as well as the following packages:
 
@@ -40,6 +44,8 @@ To plot the map, simply run the road trip plot script:
 ```
 python .\road_trip_plot.py -i .\data\<sanitized JSON file> -o .\maps\<map HTML file> -s <Start Epoch Unix timestamp of data> -e <End Epoch Unix timestamp of data>
 ```
+
+Once the map HTML file is generated, you'll need to add a Google Maps JavaScript API key. The [documentation and sample code](https://developers.google.com/maps/documentation/javascript/tutorial#The_Hello_World_of_Google_Maps_v3) demonstrates how to do this. Once this key is added to the URL in the map HTML file, the HTML file can be opened in any browser to view the plotted data.
 
 ## Output
 
