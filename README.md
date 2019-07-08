@@ -1,4 +1,4 @@
-Cross Country Road Trip Plot
+Road Trip Plots
 ==========================
 
 ## Description
