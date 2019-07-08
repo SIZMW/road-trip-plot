@@ -41,16 +41,20 @@ To plot the map, simply run the road trip plot script:
 python .\road_trip_plot.py -i .\data\<sanitized JSON file> -o .\maps\<map HTML file> -s <Start Epoch Unix timestamp of data> -e <End Epoch Unix timestamp of data>
 ```
 
-### Output
+## Output
 
 An example of each of my road trip maps can be found below. There are more map images in the corresponding `img/` directories.
 
-#### Boston to San Diego
+### Boston to San Diego
 
 ![1920x1080](img/boston-sandiego/boston-sandiego-1920x1080.png)
 
-#### Seattle to Yellowstone National Park (and Back)
+### Seattle to Yellowstone National Park
+
+#### Forward and Upper Loop
 
 ![1920x1080](img/seattle-yellowstone/seattle-yellowstone-1920x1080.png)
+
+#### Lower Loop and Return
 
 ![1920x1080](img/seattle-yellowstone/seattle-yellowstone-reverse-1920x1080.png)
