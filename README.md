@@ -49,18 +49,8 @@ Once the map HTML file is generated, you'll need to add a Google Maps JavaScript
 
 ## Output
 
-An example of each of my road trip maps can be found below. There are more map images in the corresponding `img/` directories.
+An example of my road trip maps can be found below. There are more map images in the corresponding `img/` directories.
 
 ### Boston to San Diego
 
 ![1920x1080](img/boston-sandiego/boston-sandiego-1920x1080.png)
-
-### Seattle to Yellowstone National Park
-
-#### Forward and Upper Loop
-
-![1920x1080](img/seattle-yellowstone/seattle-yellowstone-1920x1080.png)
-
-#### Lower Loop and Return
-
-![1920x1080](img/seattle-yellowstone/seattle-yellowstone-reverse-1920x1080.png)
