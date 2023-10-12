@@ -1,4 +1,5 @@
 import datetime
+from datetime import timezone
 import gmplot
 import json
 import numpy as np
@@ -21,8 +22,8 @@ def generate_map(input_file, output_file, start_time, end_time):
     start_time_s = float(start_time) / MS_TO_SECONDS
     end_time_s = float(end_time) / MS_TO_SECONDS
 
-    start_date = datetime.datetime.fromtimestamp(start_time_s)
-    end_date = datetime.datetime.fromtimestamp(end_time_s)
+    start_date = datetime.datetime.fromtimestamp(start_time_s, timezone.utc)
+    end_date = datetime.datetime.fromtimestamp(end_time_s, timezone.utc)
 
     # List of all locations during trip
     loc_list = []
@@ -35,7 +36,7 @@ def generate_map(input_file, output_file, start_time, end_time):
         
         for loc in all_locs:
             # Convert location time to datetime instance
-            loc_date = datetime.datetime.fromtimestamp(float(loc[TIMESTAMP_MS_KEY]) / MS_TO_SECONDS_F)
+            loc_date = datetime.datetime.fromisoformat(loc[TIMESTAMP_MS_KEY])
             
             if loc_date >= start_date and loc_date <= end_date:
                 # Track each location with time
@@ -61,7 +62,7 @@ def generate_map(input_file, output_file, start_time, end_time):
     gmap.plot(lats,lons,'red', edge_width=3) # Format route line
     gmap.draw(output_file) # Output map to webpage view
 
-    print 'Finished generating map for location data.'
+    print('Finished generating map for location data.')
 
 
 if __name__ == '__main__':
