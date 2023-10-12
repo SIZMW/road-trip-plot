@@ -11,7 +11,7 @@ Google Maps has a [timeline](https://www.google.com/maps/timeline) feature which
 One of the main issues that comes up with this method of data collection is that depending on the location of the trip and the cell/GPS signal strength throughout the trip, it's possible that the data can be incomplete, noisey, or coarse in granularity. Otherwise, in general, the resulting map and route plots tend to be very clear and descriptive of the original data.
 
 ## Build
-This project requires [Python 2.7](https://www.python.org/download/releases/2.7/), as well as the following packages:
+This project requires [Python 3.x](https://www.python.org/downloads/) as well as the following packages:
 
 * [`gmplot`](https://github.com/vgm64/gmplot)
 
